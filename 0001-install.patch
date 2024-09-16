@@ -1,0 +1,47 @@
+From 612cff08d631f1814aa00f8819eddb09a1afc393 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 7 Sep 2024 17:16:03 +0800
+Subject: [PATCH] install
+ 
+---
+ resources/revosim.desktop | 11 +++++++++++
+ revosim/revosim.pro       |  7 +++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 resources/revosim.desktop
+
+diff --git a/resources/revosim.desktop b/resources/revosim.desktop
+new file mode 100644
+index 0000000..74287cd
+--- /dev/null
++++ b/resources/revosim.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=revosim
++Name=revosim
++Name[zh_CN]=revosim
++Icon=revosim
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=revosim
++Version=3.0.1
+diff --git a/revosim/revosim.pro b/revosim/revosim.pro
+index c5adbe5..a3d2b1a 100644
+--- a/revosim/revosim.pro
++++ b/revosim/revosim.pro
+@@ -127,3 +127,10 @@ RC_FILE = resources/revosim.rc
+ #Mac icon
+ ICON = ../resources/revosim.icns
+ 
++target.path = $$PREFIX/bin
++desktop.files = ../resources/revosim.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/apps/
++icons.files = ../resources/revosim.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.43.4
+
